@@ -18,8 +18,8 @@ class House(models.Model):
     floor = models.PositiveSmallIntegerField(default=2)
     parking = models.PositiveSmallIntegerField(default=2)
     room = models.PositiveSmallIntegerField(default=2)
-    category = models.ForeignKey("Category", on_delete=models.CASCADE)
-    is_available = models.BooleanField(default=True)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name='houses')
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
