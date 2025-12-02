@@ -18,6 +18,7 @@
   <div class="section properties">
     <div class="container">
       <ul class="properties-filter">
+
         <li>
           <a class="is_active" href="{% url 'properties' %}" data-filter="*">Show All</a>
         </li>
@@ -27,26 +28,34 @@
         </li>
         {% endfor %}
       </ul>
+
       <div class="row properties-box">
+
         {% for house in houses %}
         <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+          
           <div class="item">
+
             <a href="{% url 'house-detail' house.id %}"><img src="{{ house.image.url }}" alt=""></a>
             <span class="category">{{ house.category_name }}</span>
             <h6>${{ house.price }}</h6>
             <h4><a href="{% url 'house-detail' house.id %}">{{ house.address }}</a></h4>
+            
             <ul>
               <li>Bedrooms: <span>{{ house.bedrooms }}</span></li>
               <li>Bathrooms: <span>{{ house.bathrooms }}</span></li>
-              <li>Area: <span>{{ house.area }}m2</span></li>
+              <li>Area: <span>{{ house.area }}m<li>Area: <span>2</span></li></span></li>
               <li>Floor: <span>{{ house.floor }}</span></li>
               <li>Parking: <span>{{ house.parking }} spots</span></li>
             </ul>
+            
             <div class="main-button">
               <a href="{% url 'house-detail' house.id %}">Schedule a visit</a>
             </div>
+
           </div>
           {% endfor %}
+
         </div>
       </div>
       <div class="row">

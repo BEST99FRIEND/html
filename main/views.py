@@ -26,6 +26,7 @@ def product_list_view(request):
     houses = House.objects.all().filter(is_active=True)
 
     category = request.GET.get("category")
+    print(category)
 
     if category:
 
